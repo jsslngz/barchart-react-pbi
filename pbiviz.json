@@ -1,0 +1,25 @@
+{
+  "visual": {
+    "name": "barChart",
+    "displayName": "Bar Chart",
+    "guid": "reactCircleCardF6C87CAA832A42FBBFBF7E66B8C15578",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "Example bar chart using React",
+    "supportUrl": "none",
+    "gitHubUrl": "none"
+  },
+  "apiVersion": "2.5.0",
+  "author": {
+    "name": "Jéssica Langanz",
+    "email": "jessica.langanz@gmail.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}
