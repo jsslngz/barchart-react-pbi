@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 import * as d3 from 'd3';
 
+import { getMeasures } from './utils';
+import './style.less';
+
 const Bars = ({ dataPoints, width, height }) => {
-  // const [dataset, setDataset] = useState(dataPoints);
-  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-  let innerHeight = height - margin.top - margin.bottom;
-  let innerWidth = width - margin.left - margin.right;
+  const yAxisRef = useRef(null);
+
+  const { margin, innerWidth, innerHeight } = getMeasures(width, height);
 
   let xScale = d3
     .scaleBand()
@@ -22,8 +25,17 @@ const Bars = ({ dataPoints, width, height }) => {
     .rangeRound([innerHeight, 0])
     .domain([0, d3.max<number>(dataPoints.map(d => d.value))]);
 
+  useEffect(() => {
+    d3.select(yAxisRef.current).call(
+      d3.axisLeft(yScale).tickFormat(d3.format('.1s'))
+    );
+  }, [dataPoints, yAxisRef.current]);
+
   return (
-    <g transform={`translate(${margin.left}, ${margin.top})`}>
+    <g
+      className="mainGroup"
+      transform={`translate(${margin.left}, ${margin.top})`}
+    >
       {dataPoints.map(d => (
         <rect
           className="bar"
@@ -34,6 +46,10 @@ const Bars = ({ dataPoints, width, height }) => {
           fill={'#5FDAD5'}
         ></rect>
       ))}
+      <g>
+        {/* <g transform={`translate(0, ${innerHeight})`} ref="xAxis"></g> */}
+        <g className="yAxis" ref={yAxisRef}></g>
+      </g>
     </g>
   );
 };

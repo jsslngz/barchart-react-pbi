@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ViewModel from './visual';
-import Bars from './components/bars';
+import Bars from './components/Bars';
 
 export interface State {
   width: number;
@@ -44,7 +44,7 @@ export class BarChart extends React.Component<{}, State> {
     const { width, height, viewModel } = this.state;
 
     return (
-      <svg width={width} height={height}>
+      <svg className="barChart" width={width} height={height}>
         <Bars dataPoints={viewModel.dataPoints} width={width} height={height} />
       </svg>
     );
