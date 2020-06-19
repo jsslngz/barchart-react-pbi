@@ -1,10 +1,9 @@
-# Circle Card React Custom Visual
+# Bar Chart Power BI Visual 
 
-> Demo Custom Visual using React JS
+> Demo Custom Visual using React and React Hooks
 
 # Overview
 
-![React Bar Chart](./assets/screenshot.png)
 
 This repository represents a simple way to use React for development of Power BI Custom Visuals. Shows a simple Bar Chart.
 
