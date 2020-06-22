@@ -18,7 +18,7 @@ import { BarChart, initialState } from './index';
 import { VisualSettings } from './settings';
 import './../style/visual.less';
 
-interface DataPoint {
+export interface DataPoint {
   category: string;
   value: number;
 }
@@ -48,12 +48,13 @@ export class Visual implements IVisual {
       const { width, height } = this.viewport;
 
       this.settings = VisualSettings.parse(dataView) as VisualSettings;
-      const object = this.settings.circle;
+      const barChartSettings = this.settings.barChart;
 
       BarChart.update({
         width,
         height,
         viewModel,
+        barColor: barChartSettings?.barColor,
       });
     } else {
       this.clear();

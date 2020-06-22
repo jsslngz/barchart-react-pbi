@@ -12,25 +12,18 @@
     }
   ],
   "objects": {
-    "circle": {
-      "displayName": "Circle",
+    "barChart": {
+      "displayName": "BarChart",
       "properties": {
-        "circleColor": {
-          "displayName": "Color",
-          "description": "The fill color of the circle.",
+        "barColor": {
+          "displayName": "Bar Color",
+          "description": "The fill color of the bars.",
           "type": {
             "fill": {
               "solid": {
                 "color": true
               }
             }
-          }
-        },
-        "circleThickness": {
-          "displayName": "Thickness",
-          "description": "The circle thickness.",
-          "type": {
-            "numeric": true
           }
         }
       }
